@@ -169,3 +169,7 @@ mur.greet()
 # file reading
 with open('test.txt') as f:
     print(f.read())
+
+# file writing
+with open('my_written.txt', 'w') as f:
+    f.write('Hello World')
