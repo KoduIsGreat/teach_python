@@ -1,19 +1,27 @@
-# printing hello world
+# This is a comment, it will not be executed
+# but it will show up in the code editor
+# below are some examples of python code
 
+# print example the simplest python program
 print('Hello World')
 
 # variable declaration
-fooInt = 1
+fooInt = 1  # int
 print(fooInt)
-fooFloat = 1.3
+
+fooFloat = 1.3  # float
 print(fooFloat)
-fooBool = True
+
+fooBool = True | False  # bool
 print(fooBool)
-fooString = 'Hello World'
+
+fooString = 'Hello World'  # string
 print(fooString)
-fooFormatString = f'Hello World, {fooInt}'
-fooBytes = b'Hello World'
-fooBinaryString = b'Hello World'
+
+fooFormatString = f'Hello World, {fooInt}'  # formatted string
+fooBytes = b'Hello World'  # bytes
+
+none = None  # None eg represents null, nil or undefined
 
 sum = fooInt + fooFloat
 
@@ -95,6 +103,7 @@ if (n := len(my_list)) > 3:
     print(f'List is too long ({n} elements, expected <= 3)')
 
 # Function Examples
+# Functions are defined using the def keyword
 
 
 def my_function():
@@ -106,6 +115,8 @@ def my_function():
 
 my_function()
 
+# Functions can take arguments
+
 
 def my_function_with_args(a, b):
     """
@@ -115,6 +126,8 @@ def my_function_with_args(a, b):
 
 
 my_function_with_args(my_list, my_dict)
+
+# Functions can return values
 
 
 def add(a, b):
@@ -128,7 +141,7 @@ c = add(3, 4)
 
 print('c is ', c)
 
-# functions can return multiple values (tuples)
+# Functions can return multiple values
 
 
 def add_and_subtract(a, b):
@@ -143,8 +156,19 @@ sum, difference = add_and_subtract(2, 4)
 print(f'sum={sum}, difference={difference}')
 
 # Class examples
+# The purpose of a class is to define a blueprint for objects
+# An object is an instance of a class that has attributes and methods
+# An attribute is a variable that is part of the class
+# A method is a function that is part of the class
+# The __init__ method is a special method that is called when an object is created
+# It is used to initialize the object's attributes
+# The __init__ method is called a constructor
+# The self parameter is a reference to the current instance of the class, and
+# is used to access variables that belong to the class.
 
 
+# To initialize a rat call its constructor with a name parameter
+# rat = Rat('Fanny the smelly rat')
 class Rat:
     name = 'Rat'
     age = 3
@@ -173,3 +197,37 @@ with open('test.txt') as f:
 # file writing
 with open('my_written.txt', 'w') as f:
     f.write('Hello World')
+
+
+# Type Hints
+
+# variable
+anInt: int = 3
+# uncomment to see the error
+# anInt = '3'
+
+# function parameters and return
+
+
+def add_with_type_hints(a: int, b: int) -> int:
+    return a + b
+
+# class attributes and methods
+
+
+class Dog:
+    name: str
+    age: int = 3
+
+    # here you can define the type of the parameter to the constructor as well
+    # as a default value
+    def __init__(self, name: str = 'Dog'):
+        self.name = name
+
+    def greet(self) -> None:
+        print(f'Hello, my name is {self.name}, I am {self.age} years old')
+
+
+# will have the name 'Dog' and age '3' by default
+dog = Dog()
+dog.greet()
